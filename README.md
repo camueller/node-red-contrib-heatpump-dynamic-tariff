@@ -2,7 +2,7 @@
 ## Ziel
 Steuerung einer Wärmepumpe zur Erzielung **geringstmöglicher Stromkosten** durch Nutzung eines  **dynamischen Strom-Tarifs mit stündlichen Preisen**. Optional kann dabei die Ertragsprognose einer vorhandenen **PV-Anlage** berücksichtigt werden.
 
-Damit stellt dieses Projekt eine allgemeinerte Version meines Ende 2024 gestarteten Projektes [node-red-contrib-heatpump-tibber-pv](https://github.com/camueller/node-red-contrib-heatpump-tibber-pv) dar, dessen Name bereits sagte, dass ausschließlich Tibber unterstützt wurde und das Vorhandensein einer PV-Anlage impliziert wurde.
+Damit stellt dieses Projekt eine allgemeinerte Version meines Ende 2023 gestarteten Projektes [node-red-contrib-heatpump-tibber-pv](https://github.com/camueller/node-red-contrib-heatpump-tibber-pv) dar, dessen Name bereits sagte, dass ausschließlich Tibber unterstützt wird und auch das Vorhandensein einer PV-Anlage impliziert wurde.
 
 Ich habe zu diesem Thema auch ein Video erstellt, welches die Zusammenhänge und die praktische Umsetzung verständlich machen sollte:
 <a href="https://www.youtube.com/watch?v=sGIVslsUMZ4"><img align="left" src="images/youtube.png"></a>
@@ -34,14 +34,14 @@ Bei der **Steuerung durch Node-RED** darf dieses Relais natürlich nicht mehr mi
 Die **grundsätzliche Idee dieser Steuerung** besteht darin, die EVU-Sperre immer aktiv zu haben außer in den Stunden, die als kostengünstig klassifiziert wurden. Damit die Wärmepumpe läuft, wenn die EVU-Sperre nicht aktiv ist, müssen die Schaltzeiten in der Wärmepumpensteuerung so angepasst werden, dass sie 24 Stunden täglich einschalten würde.
 
 ## Dynamischer Strom-Tarif mit stündlichen Preisen
-Für die Berechnung der stündlichen Stromkosten der Wärmepumpe müssen die stündlichen Strompreise des Stromanbieters täglich geladen werden. Weil jeder Stromanbieter sein eigenes Datenformat  (API) verwendet sind jeweils einige Anpassungen erforderlich.
+Für die Berechnung der stündlichen Stromkosten der Wärmepumpe müssen die stündlichen Strompreise des Stromanbieters täglich geladen werden. Weil jeder Stromanbieter sein eigenes Datenformat (API) verwendet müssen einige Parameter konfiguriert werden.
 
 Aktuell werden folgenden Strom-Anbieter unterstützt:
 - [Tibber](https://tibber.com/)
 - [Awattar](https://www.awattar.at/)
 
 ## Prognose der Leistung der PV-Anlage
-Falls eine PV-Anlage vorhanden ist, sind Ertragsprognosen für die Berechnung der stündlichen Stromkosten der Wärmepumpe erforderlich. Auch hier gilt, dass jeder Anbieter solcher Prognosen sein eigenes Datenformat (API) verwendet und deshalb jeweils einige Anpassungen erforderlich sind.
+Falls eine PV-Anlage vorhanden ist, sind Ertragsprognosen für die Berechnung der stündlichen Stromkosten der Wärmepumpe erforderlich. Auch hier gilt, dass jeder Anbieter solcher Prognosen sein eigenes Datenformat (API) verwendet und deshalb einige Parameter konfiguriert werden müssen.
 
 ### [Forecast.Solar](https://forecast.solar/)
 Bei Forecast.Solar muss man keinen Account erstellen. Die Angaben zur  Lage, Ausrichtung und Leistung der PV-Anlage müssen in der Flow-Konfiguration angegeben werden.
@@ -57,7 +57,7 @@ Um das Verhalten der Steuerung transparent zu machen, beinhaltet der Flow auch d
 
 ## Installation und Konfiguration
 <a><img align="left" src="images/install.png"></a>
-Zur Nutzung des Flows inst die [Installation von Node-RED und einigen Bibliotheken erforderlich](installation.md).
+Zur Nutzung des Flows ist die [Installation von Node-RED und einigen Bibliotheken erforderlich](installation.md).
 
 Damit der Flow tatsächlich funktioniert ist die [Konfiguration einiger Werte](configuration.md) erforderlich.
 

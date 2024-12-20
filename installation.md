@@ -18,9 +18,7 @@ Für Node-RED sollte ein eigener User verwendet werden, der zur sudo-Gruppe hinz
     sudo usermod -a -G sudo nodered
     sudo passwd nodered
 
-Ab jetzt sollte mit diesem User gearbeitet werden.
-
-Zunächst muss [Node-RED installiert](https://nodered.org/docs/getting-started/) werden, falls noch nicht vorhanden.
+Ab jetzt sollte mit diesem User gearbeitet werden - auch bereits für die [auf der Node-RED-Homepage beschriebenen Installation von Node-RED](https://nodered.org/docs/getting-started/).
 
 ## Installation benötigter Bibliotheken
 Folgende Module müssen über `Palette verwalten -> Installation` installiert werden:
@@ -56,7 +54,7 @@ Dazu muss in der Datei `~/.node-red/settings.js` oberhalb von `module.exports = 
 ### Node-RED Service-Log in Datei schreiben (optional)
 Das Service-Log von Node-RED kann mit dem Befehl `node-red-log` angezeigt werden. Standardmäßig wird es nicht in eine Datei geschrieben.
 
-Zur besseren Nachvollziehbarkeit erzeugt der Flow einige Einträge im Service-Log. Wenn diese in eine Datei geschrieben werden sollen, muss zunächst `resyslog` installiert werden:
+Zur besseren Nachvollziehbarkeit erzeugt der Flow einige Einträge im Service-Log. Wenn diese in eine Datei geschrieben werden sollen, muss zunächst `rsyslog` installiert werden:
 
     sudo apt install rsyslog
 
@@ -82,7 +80,7 @@ Die Änderung der Log-Levels auf `debug` erfolgt in der Datei `~/.node-red/setti
      },
 
 ## Flow-Import
-Der Import der Flows in Node-RED erfolgt über das Menü `Import`. Nach Klick in den zentralen, roten Bereich des Import-Dialoges kann dort das [Flow-JSON für Heatpump-Tibber-PV](https://raw.githubusercontent.com/camueller/node-red-contrib-dynamic-tariff/main/flow.json) eingefügt werden. Durch Klicken des `Import`-Buttons werden die Flows in Node-RED importiert. 
+Der Import der Flows in Node-RED erfolgt über das Menü `Import`. Nach Klick in den zentralen, roten Bereich des Import-Dialoges kann dort der [Flow im JSON-Format](https://github.com/camueller/node-red-contrib-heatpump-dynamic-tariff/blob/main/flow.json) eingefügt werden. Durch Klicken des `Import`-Buttons werden die Flows in Node-RED importiert. 
 
 ## Deploy
 Wenn zuvor alle benötigten Bibliotheken installiert wurden, sollten dabei keine Fehler auftreten. Für die fehlerfreie Ausführung des Flows ist zusätzlich die [Konfiguration der Parameter](configuration.md) erforderlich.
